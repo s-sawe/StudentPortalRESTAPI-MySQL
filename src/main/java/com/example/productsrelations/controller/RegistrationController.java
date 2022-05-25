@@ -22,8 +22,10 @@ public class RegistrationController {
     private CourseRepository courseRepository;
 
     @PostMapping("/placeRegistration")
-    public Student createRegistration(@RequestBody RegistrationRequest request){
-      return studentRepository.save(request.getStudent());
+    public Student createRegistration(@RequestBody RegistrationRequest request){ //replaced Student with String here and vice versa
+       //return "Student Registration Sucessful!!";
+        return studentRepository.save(request.getStudent());
+
     }
     @GetMapping("/findAllCourses")
     public List<Student> findAllCourses(){
